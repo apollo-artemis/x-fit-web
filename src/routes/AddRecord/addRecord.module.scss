@@ -1,0 +1,38 @@
+@use '/src/styles/constants/colors';
+
+.addRecordWrap {
+  position: relative;
+  height: 100%;
+
+  .recordInputWrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background-color: #f2f2f2;
+
+    .recordInput {
+      width: 250px;
+      height: 40px;
+      padding-left: 15px;
+      font-size: 18px;
+      border-bottom: 1px solid colors.$GRAY6;
+    }
+
+    .unit {
+      margin-left: -20px;
+      font-size: 18px;
+      color: colors.$GRAY6;
+    }
+
+    .addBtn {
+      margin-left: 20px;
+      font-size: 15px;
+      color: colors.$GRAY6;
+    }
+  }
+}
