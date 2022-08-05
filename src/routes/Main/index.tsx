@@ -5,23 +5,23 @@ import style from './main.module.scss'
 const recordItem = [
   {
     ko: '데드리프트',
-    en: 'deadlift',
+    en: 'Deadlift',
   },
   {
-    ko: '클린',
-    en: 'clean',
+    ko: '벤치프레스',
+    en: 'Bench press',
   },
   {
     ko: '프론트스쿼트',
-    en: 'frontSquat',
+    en: 'Front squat',
   },
   {
     ko: '백스쿼트',
-    en: 'backSquat',
+    en: 'Back squat',
   },
   {
     ko: '숄더프레스',
-    en: 'shoulderPress',
+    en: 'Shoulder press',
   },
 ]
 const Main = () => {

@@ -16,7 +16,7 @@ const ExerciseItem = ({ item }: Props) => {
         <div className={style.imgWrap} />
         <p className={style.en}>{item.en}</p>
         <p className={style.ko}>{item.ko}</p>
-        <p className={style.record}>등록된 기록이 없어요</p>
+        {/* <p className={style.record}>등록된 기록이 없어요</p> */}
       </Link>
     </li>
   )

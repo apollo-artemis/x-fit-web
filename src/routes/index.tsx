@@ -2,6 +2,7 @@ import { Routes, Route, NavLink } from 'react-router-dom'
 import Main from './Main'
 import style from 'routes/routes.module.scss'
 import AddRecord from './AddRecord'
+import Login from './Login'
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       <div className={style.wrap}>
         <Routes>
           <Route path='/' element={<Main />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/add_record' element={<AddRecord />} />
         </Routes>
       </div>

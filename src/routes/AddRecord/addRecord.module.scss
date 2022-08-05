@@ -4,35 +4,83 @@
   position: relative;
   height: 100%;
 
+  .exerciseName {
+    font-size: 40px;
+    font-weight: bold;
+    color: colors.$GRAY6;
+  }
+
+  .title {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    color: colors.$GRAY6;
+  }
+
+  .lastRecord {
+    .lastRecordItem {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 30px;
+      margin-top: 30px;
+      font-size: 20px;
+      line-height: 30px;
+
+      .date {
+        display: flex;
+
+        .month {
+          margin-right: 8px;
+          font-weight: bold;
+          color: colors.$GRAY3;
+        }
+
+        .day {
+          color: colors.$GRAY6;
+        }
+      }
+    }
+  }
+
   .recordInputWrap {
     position: absolute;
     bottom: 0;
     left: 0;
-    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100px;
     background-color: #f2f2f2;
 
-    .recordInput {
-      width: 250px;
-      height: 40px;
-      padding-left: 15px;
-      font-size: 18px;
-      border-bottom: 1px solid colors.$GRAY6;
-    }
-
-    .unit {
-      margin-left: -20px;
-      font-size: 18px;
+    .inputTitle {
+      margin-top: -40px;
+      font-size: 25px;
       color: colors.$GRAY6;
     }
 
-    .addBtn {
-      margin-left: 20px;
-      font-size: 15px;
-      color: colors.$GRAY6;
+    .recordInputForm {
+      padding: 40px 0 30px;
+      text-align: center;
+
+      .recordInput {
+        width: 250px;
+        height: 40px;
+        padding-left: 15px;
+        font-size: 18px;
+        border-bottom: 1px solid colors.$GRAY6;
+      }
+
+      .unit {
+        margin-left: -20px;
+        font-size: 18px;
+        color: colors.$GRAY6;
+      }
+
+      .addBtn {
+        margin-left: 20px;
+        font-size: 15px;
+        color: colors.$GRAY6;
+      }
     }
   }
 }
