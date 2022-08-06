@@ -12,10 +12,6 @@ const recordItem = [
     en: 'Bench press',
   },
   {
-    ko: '프론트스쿼트',
-    en: 'Front squat',
-  },
-  {
     ko: '백스쿼트',
     en: 'Back squat',
   },
