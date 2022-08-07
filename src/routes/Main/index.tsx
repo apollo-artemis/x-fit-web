@@ -2,22 +2,28 @@ import React, { useState } from 'react'
 import ExerciseItem from './ExerciseItem'
 import style from './main.module.scss'
 
+import { IDeadlift } from 'assets/svg'
+
 const recordItem = [
   {
     ko: '데드리프트',
     en: 'Deadlift',
+    param: 'deadlift',
   },
   {
     ko: '벤치프레스',
     en: 'Bench press',
+    param: 'banch_press',
   },
   {
     ko: '백스쿼트',
     en: 'Back squat',
+    param: 'back_squat',
   },
   {
     ko: '숄더프레스',
     en: 'Shoulder press',
+    param: 'shoulder_press',
   },
 ]
 const Main = () => {

@@ -25,6 +25,7 @@
   },
   "include": [
     "src",
-    "parcel.d.ts"
+    "parcel.d.ts",
+    "custom.d.ts"
   ]
 }

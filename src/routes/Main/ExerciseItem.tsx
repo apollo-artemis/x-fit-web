@@ -1,19 +1,36 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import style from './main.module.scss'
+import * as exerciseIcon from 'assets/svg/'
+import { Interface } from 'readline'
 
 interface Props {
   item: {
     ko: string
     en: string
+    param: string
   }
 }
 
+interface IexerciseIcon {
+  [key: string]: any
+}
+
 const ExerciseItem = ({ item }: Props) => {
+  const exercise: IexerciseIcon = {
+    // deadLift: <exerciseIcon.IDeadlift className={style.exerciseIcon} />,
+    deadlift: <exerciseIcon.IDeadlift className={style.exerciseIcon} />,
+    banch_press: <exerciseIcon.IDeadlift className={style.exerciseIcon} />,
+    back_squat: <exerciseIcon.ISquat className={style.exerciseIcon} />,
+    shoulder_press: <exerciseIcon.IPress className={style.exerciseIcon} />,
+  }
   return (
     <li className={style.exerciseItem}>
-      <Link to='add_record'>
-        <div className={style.imgWrap} />
+      <Link to={`add_record/${item.param}`}>
+        <div className={style.imgWrap}>
+          {exercise[item.param]}
+          {/* <exerciseIcon.IDeadlift className={style.exerciseIcon} /> */}
+        </div>
         <p className={style.en}>{item.en}</p>
         <p className={style.ko}>{item.ko}</p>
         {/* <p className={style.record}>등록된 기록이 없어요</p> */}
