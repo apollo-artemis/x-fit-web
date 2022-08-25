@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import style from './main.module.scss'
 import * as exerciseIcon from 'assets/svg/'
-import { Interface } from 'readline'
 
 interface Props {
   item: {
@@ -19,10 +18,10 @@ interface IexerciseIcon {
 const ExerciseItem = ({ item }: Props) => {
   const exercise: IexerciseIcon = {
     // deadLift: <exerciseIcon.IDeadlift className={style.exerciseIcon} />,
-    deadlift: <exerciseIcon.IDeadlift className={style.exerciseIcon} />,
-    banch_press: <exerciseIcon.IDeadlift className={style.exerciseIcon} />,
-    back_squat: <exerciseIcon.ISquat className={style.exerciseIcon} />,
-    shoulder_press: <exerciseIcon.IPress className={style.exerciseIcon} />,
+    DEAD_LIFT: <exerciseIcon.IDeadlift className={style.exerciseIcon} />,
+    BENCH_PRESS: <exerciseIcon.IDeadlift className={style.exerciseIcon} />,
+    BACK_SQUAT: <exerciseIcon.ISquat className={style.exerciseIcon} />,
+    SHOULDER_PRESS: <exerciseIcon.IPress className={style.exerciseIcon} />,
   }
   return (
     <li className={style.exerciseItem}>

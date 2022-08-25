@@ -4,6 +4,7 @@ import { useInput } from 'hooks/useInput'
 import style from './login.module.scss'
 import SignupModal from './SignupModal'
 import { useNavigate } from 'react-router-dom'
+import axios from 'api/axios'
 
 const Login = () => {
   const [id, setId] = useInput('')
@@ -13,7 +14,19 @@ const Login = () => {
 
   const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    navigate('/')
+
+    const body = {
+      email: id,
+      password: pw,
+    }
+
+    axios
+      .post('/auth/register', body)
+      .then((res) => {
+        console.log(res.data)
+        navigate('/')
+      })
+      .catch((err) => console.log(err))
   }
 
   const toggleSignup = () => {

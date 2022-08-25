@@ -1,3 +1,4 @@
+import axios from 'api/axios'
 import ModalWrap from 'components/ModalWrap/'
 import { useInput } from 'hooks/useInput'
 import React, { FormEvent } from 'react'
@@ -10,11 +11,20 @@ interface Props {
 const SignupModal = ({ toggle }: Props) => {
   const [email, setEmail] = useInput('')
   const [pw, setPw] = useInput('')
-  const [confirmPwdValue, setConfirmPwdValue] = useInput('')
+  const [confirmPw, setConfirmPw] = useInput('')
   const [nickname, setNickName] = useInput('')
 
   const handleSignup = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    const body = {
+      email,
+      password: pw,
+    }
+
+    axios.post('/auth/register', body).then((res) => {
+      console.log(res.data)
+    })
   }
 
   return (
@@ -45,8 +55,8 @@ const SignupModal = ({ toggle }: Props) => {
             className={style.input}
             placeholder='비밀번호를 입력해주세요.'
             type='password'
-            value={confirmPwdValue}
-            onChange={setConfirmPwdValue}
+            value={confirmPw}
+            onChange={setConfirmPw}
           />
           <input
             className={style.input}
