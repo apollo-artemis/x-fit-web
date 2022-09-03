@@ -44,13 +44,13 @@ const SignupModal = ({ toggle }: Props) => {
             value={email}
             onChange={setEmail}
           />
-          <input
+          {/* <input
             className={style.input}
             placeholder='닉네임을 입력해주세요.'
             type='text'
             value={nickname}
             onChange={setNickName}
-          />
+          /> */}
           <input
             className={style.input}
             placeholder='비밀번호를 입력해주세요.'
