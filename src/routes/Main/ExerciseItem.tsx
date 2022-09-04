@@ -19,7 +19,7 @@ const ExerciseItem = ({ item }: Props) => {
   const exercise: IexerciseIcon = {
     // deadLift: <exerciseIcon.IDeadlift className={style.exerciseIcon} />,
     DEAD_LIFT: <exerciseIcon.IDeadlift className={style.exerciseIcon} />,
-    BENCH_PRESS: <exerciseIcon.IDeadlift className={style.exerciseIcon} />,
+    BENCH_PRESS: <exerciseIcon.IBanch className={style.exerciseIcon} />,
     BACK_SQUAT: <exerciseIcon.ISquat className={style.exerciseIcon} />,
     SHOULDER_PRESS: <exerciseIcon.IPress className={style.exerciseIcon} />,
   }

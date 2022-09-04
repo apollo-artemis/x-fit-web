@@ -1,14 +1,18 @@
 @use '/src/styles/constants/colors';
 
 .main {
-  .recordList {
-    margin-top: 20px;
+  h2 {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 55px;
+  }
 
+  .recordList {
     .exerciseItem {
       display: inline-block;
       width: 48%;
       height: 240px;
-      padding: 25px;
+      padding: 23px;
       margin-top: 10px;
       border: 1px solid #aaaaaa;
       border-radius: 10px;
@@ -34,7 +38,7 @@
 
       .en {
         margin-bottom: 8px;
-        font-size: 25px;
+        font-size: 22px;
       }
 
       .ko {
@@ -48,5 +52,18 @@
         color: colors.$GRAYA;
       }
     }
+  }
+
+  .surveyLink {
+    display: flex;
+    width: 60%;
+    padding: 15px 0;
+    margin: 0 auto;
+    margin-top: 32px;
+    text-align: center;
+    border: 2px solid #cccccc;
+    border-radius: 10px;
+
+    .link { display: block; width: 100%; }
   }
 }

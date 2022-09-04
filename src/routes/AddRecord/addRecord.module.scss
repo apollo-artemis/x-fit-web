@@ -18,14 +18,17 @@
   }
 
   .lastRecord {
+    margin-top: 15px;
+
     .lastRecordItem {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 30px;
-      margin-top: 30px;
+      // height: 30px;
+      padding: 20px 0;
       font-size: 20px;
       line-height: 30px;
+      border-bottom: 1px solid #e0e0e0;
 
       .date {
         display: flex;
@@ -39,6 +42,10 @@
         .day {
           color: colors.$GRAY6;
         }
+      }
+
+      .record {
+        color: colors.$GRAY6;
       }
     }
   }
@@ -54,25 +61,49 @@
 
     .inputTitle {
       margin-top: -40px;
-      font-size: 25px;
+      font-size: 22px;
       color: colors.$GRAY6;
     }
 
     .recordInputForm {
-      padding: 40px 0 30px;
-      text-align: center;
+      display: flex;
+      flex-direction: row;
+      gap: 1;
+      align-items: center;
+      justify-content: space-evenly;
+      padding-top: 40px;
 
       .recordInput {
-        width: 250px;
+        width: 180px;
         height: 40px;
         padding-left: 15px;
         font-size: 18px;
         border-bottom: 1px solid colors.$GRAY6;
       }
 
-      .datePicker {
-        text-align: center;
-        // font-size: 10px;;
+      .dataPickerWrap {
+        display: flex;
+        flex-direction: column;
+
+        /* background: #aaaaaa; */
+        align-items: center;
+        justify-content: center;
+        width: 90px;
+        height: 75px;
+        padding: 5px;
+        margin-right: 10px;
+
+        .calendar {
+          width: 18px;
+          height: 18px;
+        }
+
+        .datePicker {
+          // font-size: 10px;;
+          width: 100%;
+          font-size: 15px;
+          text-align: center;
+        }
       }
 
       .unit {
@@ -80,12 +111,18 @@
         font-size: 18px;
         color: colors.$GRAY6;
       }
+    }
 
-      .addBtn {
-        margin-left: 20px;
-        font-size: 15px;
-        color: colors.$GRAY6;
-      }
+    .addBtn {
+      display: block;
+      width: 60%;
+      padding: 10px 0;
+      margin: 14px auto 25px;
+      font-size: 15px;
+      color: colors.$GRAY6;
+      text-align: center;
+      background-color: #aaaaaa;
+      border-radius: 10px;
     }
   }
 }

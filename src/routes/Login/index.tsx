@@ -19,17 +19,22 @@ const Login = () => {
 
   const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    const emailRex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
-    const body = {
-      email: id,
-      password: pw,
-    }
-    try {
-      const res = await axios.post('/auth/login', body)
-      axios.defaults.headers.common.authorization = res.data.Authorization
-      navigate('/')
-    } catch (error) {
-      setErrorMsg('이메일 또는 비밀번호를 다시확인해주세요')
+    if (id.match(emailRex) != null) {
+      const body = {
+        email: id,
+        password: pw,
+      }
+      try {
+        const res = await axios.post('/auth/login', body)
+        axios.defaults.headers.common.authorization = res.data.Authorization
+        navigate('/')
+      } catch (error) {
+        setErrorMsg('이메일 또는 비밀번호를 다시확인해주세요')
+      }
+    } else {
+      setErrorMsg('이메일 형식이 올바르지 않습니다.')
     }
   }
 

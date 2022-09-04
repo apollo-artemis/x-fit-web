@@ -5,15 +5,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 480px;
   height: 100vh;
+  margin: 0 auto;
   // background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
 }
 
 .wrap {
   width: 100%;
-  max-width: 480px;
   height: 95vh;
-  padding: 20px;
+  padding: 32px;
   overflow: scroll;
   border: 2px solid #cccccc;
   border-radius: 15px;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import ExerciseItem from './ExerciseItem'
 import style from './main.module.scss'
 
@@ -29,12 +30,20 @@ const Main = () => {
 
   return (
     <div className={style.main}>
-      <h2>기록하고 싶은 운동을 눌러주세요!</h2>
+      <h2>운동기록</h2>
       <ul className={style.recordList}>
         {recordItem?.map((item) => (
           <ExerciseItem item={item} key={item.en} />
         ))}
       </ul>
+      <div className={style.surveyLink}>
+        <a
+          className={style.link}
+          href='https://docs.google.com/forms/u/1/d/1pKG9UjcdsEaMhamKdtI8dCr4gUVSobe5th-9y6Ka8AI/edit?usp=sharing'
+        >
+          설문조사 참여하기
+        </a>
+      </div>
     </div>
   )
 }

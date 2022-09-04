@@ -15,9 +15,7 @@ const RecordItem = ({ item }: Props) => {
         {/* <p className={style.day}>08일 월요일 18시</p> */}
         <p className={style.day}>{dayjs(item.date).locale('ko').format('YYYY년 MM월 DD일')}</p>
       </div>
-      <p>
-        {item.weight} {item.unit}
-      </p>
+      <p className={style.record}>{item.weight} LB</p>
     </li>
   )
 }
