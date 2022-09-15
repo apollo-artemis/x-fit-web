@@ -14,7 +14,7 @@ const SignupModal = ({ toggle }: Props) => {
   const [confirmPw, setConfirmPw] = useInput('')
   const [nickname, setNickName] = useInput('')
 
-  const handleSignup = (e: FormEvent<HTMLFormElement>) => {
+  const handleSignup = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const body = {
@@ -22,9 +22,8 @@ const SignupModal = ({ toggle }: Props) => {
       password: pw,
     }
 
-    axios.post('/auth/register', body).then((res) => {
-      console.log(res.data)
-    })
+    const res = await axios.post('/auth/register', body)
+    console.log(res)
   }
 
   return (

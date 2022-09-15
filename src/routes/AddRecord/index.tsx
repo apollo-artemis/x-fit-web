@@ -1,11 +1,10 @@
-import axios from 'axios'
+import axios from 'api/axios'
 import { useInput } from 'hooks/useInput'
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { IRecordItem } from 'types/record'
 import style from './addRecord.module.scss'
 import RecordItem from './RecordItem'
-import dayjs from 'dayjs'
 import DatePicker from 'react-datepicker'
 import { ICalendar } from 'assets/svg/'
 
@@ -38,11 +37,9 @@ const AddRecord = () => {
     }
   }, [exercise])
 
-  const getExercise = () => {
-    axios.get(`http://dev-api.masun129.com/records?user_id=1&exercise_name=DEAD_LIFT`).then((res) => {
-      console.log(res.data)
-      setRecordList(res.data)
-    })
+  const getExercise = async () => {
+    const res = await axios.get(`/records?exercise_name=DEAD_LIFT`)
+    setRecordList(res.data)
   }
 
   const addRecord = () => {
@@ -63,7 +60,6 @@ const AddRecord = () => {
   const handleWeight = (e: ChangeEvent<HTMLInputElement>) => {
     const numberReg = /^[0-9]+$/
     const str = e.target.value
-    console.log(str)
     if (str.match(numberReg) || str == '') setRecordValue(e.target.value)
   }
 
@@ -89,6 +85,7 @@ const AddRecord = () => {
               <ICalendar className={style.calendar} />
             </label>
             <DatePicker
+              maxDate={today}
               id='datapicker'
               className={style.datePicker}
               dateFormat='yyyy.MM.dd'
@@ -100,7 +97,7 @@ const AddRecord = () => {
             <input
               className={style.recordInput}
               type='text'
-              placeholder='오늘 기록은?'
+              placeholder='기록을 입력해주세요'
               value={recordValue}
               onChange={handleWeight}
             />

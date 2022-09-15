@@ -5,6 +5,7 @@ import style from './login.module.scss'
 import SignupModal from './SignupModal'
 import { useNavigate } from 'react-router-dom'
 import axios from 'api/axios'
+import store from 'store'
 
 const Login = () => {
   const [id, setId] = useInput('')
@@ -29,6 +30,7 @@ const Login = () => {
       try {
         const res = await axios.post('/auth/login', body)
         axios.defaults.headers.common.authorization = res.data.Authorization
+        store.set('token', res.data.Authorization)
         navigate('/')
       } catch (error) {
         setErrorMsg('이메일 또는 비밀번호를 다시확인해주세요')

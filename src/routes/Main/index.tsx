@@ -1,3 +1,4 @@
+import axios from 'api/axios'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ExerciseItem from './ExerciseItem'
@@ -26,11 +27,9 @@ const recordItem = [
   },
 ]
 const Main = () => {
-  // 한국어 밑에 영어? 영어밑에 한국어? 모할까?
-
   return (
     <div className={style.main}>
-      <h2>운동기록</h2>
+      <h2>1RM 기록</h2>
       <ul className={style.recordList}>
         {recordItem?.map((item) => (
           <ExerciseItem item={item} key={item.en} />

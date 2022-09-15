@@ -74,7 +74,7 @@
       padding-top: 40px;
 
       .recordInput {
-        width: 180px;
+        width: 210px;
         height: 40px;
         padding-left: 15px;
         font-size: 18px;
@@ -94,14 +94,15 @@
         margin-right: 10px;
 
         .calendar {
-          width: 18px;
-          height: 18px;
+          width: 22px;
+          height: 22px;
         }
 
         .datePicker {
           // font-size: 10px;;
           width: 100%;
           font-size: 15px;
+          color: colors.$GRAY6;
           text-align: center;
         }
       }
