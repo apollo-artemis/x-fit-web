@@ -9,6 +9,7 @@ import DatePicker from 'react-datepicker'
 import { ICalendar } from 'assets/svg/'
 
 import 'react-datepicker/dist/react-datepicker.css'
+import EmptyData from 'components/EmptyData'
 
 interface ITitle {
   [key: string]: string
@@ -38,7 +39,7 @@ const AddRecord = () => {
   }, [exercise])
 
   const getExercise = async () => {
-    const res = await axios.get(`/records?exercise_name=DEAD_LIFT`)
+    const res = await axios.get(`/records?exercise_name=${exercise}`)
     setRecordList(res.data)
   }
 
@@ -72,11 +73,15 @@ const AddRecord = () => {
       <p className={style.title}>지난 기록 </p>
 
       <h2 className={style.exerciseName}>{title}</h2>
-      <ul className={style.lastRecord}>
-        {recordList?.map((item, idx) => (
-          <RecordItem key={idx} item={item} />
-        ))}
-      </ul>
+      {recordList.length > 0 ? (
+        <ul className={style.lastRecord}>
+          {recordList?.map((item, idx) => (
+            <RecordItem key={idx} item={item} />
+          ))}
+        </ul>
+      ) : (
+        <EmptyData />
+      )}
       <div className={style.recordInputWrap}>
         <p className={style.inputTitle}>나의 최고 무게를 입력하세요!</p>
         <form className={style.recordInputForm}>

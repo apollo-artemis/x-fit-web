@@ -27,8 +27,10 @@ const Login = () => {
         email: id,
         password: pw,
       }
+
       try {
         const res = await axios.post('/auth/login', body)
+        console.log(res.data)
         axios.defaults.headers.common.authorization = res.data.Authorization
         store.set('token', res.data.Authorization)
         navigate('/')

@@ -20,10 +20,17 @@ const SignupModal = ({ toggle }: Props) => {
     const body = {
       email,
       password: pw,
+      birth: '1994-02-02',
+      sex: 'male',
+      height: 0,
+      weight: 0,
     }
-
-    const res = await axios.post('/auth/register', body)
-    console.log(res)
+    try {
+      await axios.post('/auth/register', body)
+      toggle()
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (

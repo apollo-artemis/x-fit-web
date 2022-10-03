@@ -4,8 +4,11 @@ import style from 'routes/routes.module.scss'
 import AddRecord from './AddRecord'
 import Login from './Login'
 import AuthRouter from './AuthRouter'
+import { useGetAllReord } from 'hooks/useGetAllRecod'
 
 const App = () => {
+  useGetAllReord()
+
   return (
     <div className={style.app}>
       <div className={style.wrap}>

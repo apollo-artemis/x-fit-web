@@ -29,6 +29,7 @@
       padding-left: 15px;
       margin: 0 auto;
       margin: 10px 0;
+      background-color: colors.$WHITE;
       border: 1px solid colors.$GRAYA;
       border-radius: 8px;
     }
@@ -41,11 +42,13 @@
 
     .loginBtn {
       display: block;
-      width: 30%;
+      width: 100%;
       padding: 10px 14px;
       margin: 50px auto 0;
       font-size: 20px;
-      background-color: #eeeeee;
+      color: colors.$WHITE;
+      background-color: colors.$BLACK;
+      border-radius: 10px;
     }
 
     .signup {

@@ -1,6 +1,3 @@
-import axios from 'api/axios'
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import ExerciseItem from './ExerciseItem'
 import style from './main.module.scss'
 
